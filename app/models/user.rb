@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   #USEモデルとPostImageモデルの関連付
   has_many :post_images, dependent: :destroy
+  has_many :post_comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 end
