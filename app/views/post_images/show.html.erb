@@ -74,6 +74,12 @@
                     </div>
                     <div class="comment-entry"><%= post_comment.comment %></div>
                   </div>
+                  <!-- コメント削除機能 -->
+                  <% if post_comment.user == current_user %>
+                  <div>
+                    <%= link_to "削除", post_image_post_comments_path(post_comment.post_image, post_comment), method: :delete, class: "btn btn-danger  pull-right" %>
+                  </div>
+                  <% end %>
                 </div>
               </li>
               <% end %>
